@@ -6,14 +6,8 @@ import { eventScheduleData } from '../data/stationsData';
 import { playTick, playToggleSound, playSuccessChime } from '../services/sound';
 
 export default function RegisterPage() {
-  const [division, setDivision] = useState('male_duo'); // male_duo, female_duo, coed_duo
+  const [division, setDivision] = useState('male_duo'); // male_duo or female_duo
   const [yearOfStudy, setYearOfStudy] = useState('SY_TY');
-  const [waiverAgreed, setWaiverAgreed] = useState({
-    health: false,
-    rules: false,
-    gear: false,
-    payment: false
-  });
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
   const [showUpiModal, setShowUpiModal] = useState(false);
   const [copiedUpi, setCopiedUpi] = useState(false);
@@ -26,16 +20,6 @@ export default function RegisterPage() {
     setCopiedUpi(true);
     setTimeout(() => setCopiedUpi(false), 2500);
   };
-
-  const handleToggleWaiver = (key) => {
-    playTick();
-    setWaiverAgreed(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
-  };
-
-  const isWaiverFullySigned = Object.values(waiverAgreed).every(Boolean);
 
   const waveTime = yearOfStudy === 'SY_TY' ? '11:00 AM Sharp (Wave 01)' : '1:10 PM Sharp (Wave 02)';
 
@@ -58,8 +42,7 @@ export default function RegisterPage() {
 
           <p className="max-w-3xl text-sm sm:text-base text-[#949CAE] leading-relaxed">
             Standard entry is strictly <strong>₹100 per Duo</strong> (covers both athletes). 
-            Follow the 3-step protocol: select your division, complete the mandatory physical fitness waiver, 
-            and complete the UPI transaction to access the official Google Form reservation ledger.
+            Select your division and reporting wave, then complete the UPI transaction to access the official Google Form reservation ledger.
           </p>
 
         </div>
@@ -185,81 +168,6 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              {/* STEP 3: Mandatory Fitness Waiver Checklist */}
-              <div className="bg-[#0B0D12] border-2 border-[#1E2332] p-6 sm:p-7 rounded-sm shadow-xl">
-                <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#1E2332]">
-                  <div className="flex items-center gap-2">
-                    <span className="font-mono text-xs font-bold text-[#08090C] bg-[#D2F824] px-2 py-0.5 rounded">
-                      STEP 03
-                    </span>
-                    <h2 className="font-display text-xl sm:text-2xl font-black text-[#F8F9FA] m-0 tracking-tight">
-                      MANDATORY FITNESS WAIVER & UNDERTAKING
-                    </h2>
-                  </div>
-                  <span className="badge-tech badge-tech-volt text-[10px]">REQUIRED</span>
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    {
-                      id: 'health',
-                      title: 'Cardiovascular & Physical Health Declaration',
-                      desc: 'Both duo athletes confirm they are in sound physical health with no unmanaged cardiovascular, respiratory, or spinal conditions.'
-                    },
-                    {
-                      id: 'rules',
-                      title: 'Adherence to Official ASPIRE × RUGGEDIAN™ Rules',
-                      desc: 'We agree to abide by marshal calls, movement rep standards, and time penalties without dispute.'
-                    },
-                    {
-                      id: 'gear',
-                      title: 'Mandatory Equipment & College Identification',
-                      desc: 'We confirm we will bring athletic turf shoes, hydration bottles, and valid DYPCET College ID cards.'
-                    },
-                    {
-                      id: 'payment',
-                      title: '₹100 Non-Refundable Heat Reservation',
-                      desc: 'We understand the ₹100 entry fee is non-refundable and reserves our slot in the timing transponder system.'
-                    }
-                  ].map((item) => {
-                    const isChecked = waiverAgreed[item.id];
-                    return (
-                      <div
-                        key={item.id}
-                        onClick={() => handleToggleWaiver(item.id)}
-                        className={`p-4 rounded border-2 transition-all cursor-pointer flex items-start gap-3.5 select-none ${
-                          isChecked
-                            ? 'bg-[#0E150F] border-[#22C55E]/60 text-[#F8F9FA]'
-                            : 'bg-[#0E1118] border-[#1E2332] text-[#949CAE] hover:border-[#333C4E]'
-                        }`}
-                      >
-                        <input
-                          type="checkbox"
-                          checked={isChecked}
-                          onChange={() => {}}
-                          className="mt-1 w-4 h-4 text-green-500 rounded cursor-pointer accent-[#D2F824]"
-                        />
-                        <div>
-                          <div className={`font-mono text-xs sm:text-sm font-bold ${isChecked ? 'text-[#F8F9FA]' : 'text-[#D0D5E0]'}`}>
-                            {item.title}
-                          </div>
-                          <div className="text-xs text-[#7E879B] mt-0.5 leading-relaxed">
-                            {item.desc}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-
-                {!isWaiverFullySigned && (
-                  <div className="mt-4 text-xs font-mono text-[#F87171] flex items-center gap-1.5 font-bold">
-                    <AlertCircle className="w-4 h-4" />
-                    <span>Please acknowledge all 4 waiver points to unlock the payment gateway.</span>
-                  </div>
-                )}
-              </div>
-
             </div>
 
             {/* Right Column: Checkout Summary & Payment Card (4 cols) */}
@@ -310,14 +218,11 @@ export default function RegisterPage() {
                 {/* Instant UPI QR Trigger */}
                 <div className="space-y-3 pt-2">
                   <button
-                    disabled={!isWaiverFullySigned}
                     onClick={() => {
                       playTick();
                       setShowUpiModal(true);
                     }}
-                    className={`btn-pill-volt w-full justify-center text-xs ${
-                      !isWaiverFullySigned ? 'opacity-50 cursor-not-allowed hover:transform-none' : ''
-                    }`}
+                    className="btn-pill-volt w-full justify-center text-xs"
                   >
                     <QrCode className="w-4 h-4 mr-1" />
                     <span>SCAN UPI QR CODE (₹100)</span>
@@ -328,9 +233,7 @@ export default function RegisterPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={playTick}
-                    className={`btn-pill-dark w-full justify-center text-xs ${
-                      !isWaiverFullySigned ? 'pointer-events-none opacity-50' : ''
-                    }`}
+                    className="btn-pill-dark w-full justify-center text-xs"
                   >
                     <span>OPEN OFFICIAL GOOGLE FORM</span>
                     <ExternalLink className="w-4 h-4 ml-1" />
