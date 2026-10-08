@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { X, ShieldAlert, CheckCircle2, Users2, Zap, ArrowRight, Gauge, Dumbbell, Activity, AlertTriangle, Flame } from 'lucide-react';
+import { X, Users2, Zap, ArrowRight, Gauge, Dumbbell, Activity, Flame } from 'lucide-react';
 import AnatomicalMuscleMap from './AnatomicalMuscleMap';
 import { playTick, playModalOpen } from '../services/sound';
 
@@ -41,7 +41,7 @@ export default function StationDrawer({ station, gender, onGenderToggle, onClose
       ></div>
 
       {/* Drawer Container */}
-      <div className="relative w-full max-w-3xl bg-[#080A0E] text-[#F8F9FA] border-l-2 border-[#202534] h-full overflow-y-auto shadow-[0_0_50px_rgba(0,0,0,0.9)] z-10 flex flex-col">
+      <div className="relative w-full max-w-2xl bg-[#080A0E] text-[#F8F9FA] border-l-2 border-[#202534] h-full overflow-y-auto shadow-[0_0_50px_rgba(0,0,0,0.9)] z-10 flex flex-col">
         
         {/* Drawer Sticky Top Header */}
         <div className="sticky top-0 bg-[#0C0E14]/95 backdrop-blur-md border-b-2 border-[#1E2332] p-4 sm:p-6 flex items-center justify-between z-20">
@@ -121,7 +121,7 @@ export default function StationDrawer({ station, gender, onGenderToggle, onClose
         </div>
 
         {/* Main Content Body */}
-        <div className="p-4 sm:p-6 lg:p-8 space-y-8 flex-1">
+        <div className="p-4 sm:p-6 lg:p-8 space-y-6 flex-1">
           
           {/* Key Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
@@ -176,50 +176,12 @@ export default function StationDrawer({ station, gender, onGenderToggle, onClose
             </p>
           </div>
 
-          {/* Section 1: Anatomical Muscle Telemetry */}
+          {/* Anatomical Muscle Telemetry */}
           <div>
             <AnatomicalMuscleMap muscles={station.muscles} activeStationTitle={station.title} />
           </div>
 
-          {/* Section 2: Movement Standards (Valid Rep Criteria) */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 pb-2.5 border-b border-[#1E2332]">
-              <CheckCircle2 className="w-5 h-5 text-[#D2F824]" />
-              <h4 className="font-mono text-xs sm:text-sm font-black uppercase tracking-wider text-[#F8F9FA]">
-                VALID REP CRITERIA // MOVEMENT STANDARDS
-              </h4>
-            </div>
-            <div className="space-y-2">
-              {station.movementStandards.map((std, idx) => (
-                <div key={idx} className="flex items-start gap-3 p-3.5 bg-[#0A0D14] border border-[#1E2434] rounded-sm text-xs sm:text-sm text-[#E2E6F0] hover:border-[#D2F824]/40 transition-colors">
-                  <span className="font-mono text-[#D2F824] font-black shrink-0 text-sm">{String(idx + 1).padStart(2, '0')}.</span>
-                  <span className="leading-relaxed">{std}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 3: Judge & Penalty Criteria */}
-          <div className="space-y-3">
-            <div className="flex items-center gap-2 pb-2.5 border-b border-[#1E2332]">
-              <ShieldAlert className="w-5 h-5 text-red-500" />
-              <h4 className="font-mono text-xs sm:text-sm font-black uppercase tracking-wider text-[#F8F9FA]">
-                JUDGING AUDIT // NO REP PENALTIES (+5.0s / DQ)
-              </h4>
-            </div>
-            <div className="space-y-2">
-              {station.noRepPenalties.map((penalty, idx) => (
-                <div key={idx} className="p-3.5 bg-[#140A0D] border border-red-900/50 rounded-sm text-xs sm:text-sm text-red-200 flex items-start gap-3">
-                  <span className="font-mono text-red-400 font-black shrink-0 uppercase bg-red-950/80 px-1.5 py-0.5 rounded text-[10px]">
-                    NO REP //
-                  </span>
-                  <span className="leading-relaxed">{penalty}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Section 4: Duo Strategy & Energy Management */}
+          {/* Duo Strategy & Coaching Cues */}
           <div className="p-5 bg-[#0B101D] border-2 border-[#1E3A8A]/50 rounded-sm relative overflow-hidden">
             <div className="flex items-center gap-2 mb-2">
               <Users2 className="w-4 h-4 text-[#60A5FA]" />

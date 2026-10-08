@@ -88,11 +88,10 @@ export default function RegisterPage() {
                   <span className="font-mono text-xs text-[#7E879B] font-bold">2 ATHLETES</span>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {[
                     { id: 'male_duo', label: '♂ MALE DUO', sub: '2 Male Athletes', badge: 'Standard Male Specs' },
-                    { id: 'female_duo', label: '♀ FEMALE DUO', sub: '2 Female Athletes', badge: 'Standard Female Specs' },
-                    { id: 'coed_duo', label: '♂+♀ CO-ED DUO', sub: '1 Male + 1 Female', badge: 'Split Handicap Specs' }
+                    { id: 'female_duo', label: '♀ FEMALE DUO', sub: '2 Female Athletes', badge: 'Standard Female Specs' }
                   ].map((div) => {
                     const isSelected = division === div.id;
                     return (

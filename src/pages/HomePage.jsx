@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, Flame, Shield, Activity, Users2, Trophy, Clock, ChevronRight, Zap, Target, Layers, Dumbbell } from 'lucide-react';
-import CountdownTicker from '../components/CountdownTicker';
 import StationCard from '../components/StationCard';
 import StationDrawer from '../components/StationDrawer';
-import WaveCalculator from '../components/WaveCalculator';
 import { stationsData } from '../data/stationsData';
 import { playTick, playToggleSound } from '../services/sound';
 
@@ -22,7 +20,6 @@ export default function HomePage() {
       
       {/* =========================================================================
           HERO SECTION: Hardcore Dark Gym & HYROX Arena
-          High-energy athletic dark environment with Volt accents
           ========================================================================= */}
       <section className="relative pt-8 pb-16 md:pt-16 md:pb-24 border-b-2 border-[#1E2332] bg-[#08090C] overflow-hidden">
         {/* Subtle arena knurling & spotlight aura */}
@@ -71,7 +68,7 @@ export default function HomePage() {
           </div>
 
           {/* Athletic Split Hero Content: Intel Summary + CTAs */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7 space-y-5">
               <p className="text-base sm:text-lg text-[#C8CEDC] font-sans leading-relaxed">
@@ -107,7 +104,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Quick Stat Tiles in Aggressive Carbon & Steel */}
+            {/* Quick Stat Tiles */}
             <div className="lg:col-span-5 grid grid-cols-2 gap-3.5">
               <div className="p-4 sm:p-5 bg-[#0E1016] text-[#F8F9FA] border-2 border-[#1E2332] rounded-sm hover:border-[#D2F824]/60 transition-colors">
                 <div className="font-mono text-[10px] text-[#7E879B] tracking-wider uppercase font-bold mb-1">
@@ -156,82 +153,6 @@ export default function HomePage() {
                   11:00 AM & 1:10 PM
                 </div>
               </div>
-            </div>
-
-          </div>
-
-          {/* Live Countdown Ticker */}
-          <div className="mt-8">
-            <CountdownTicker />
-          </div>
-
-        </div>
-      </section>
-
-      {/* =========================================================================
-          HYROX PHILOSOPHY DECONSTRUCTED: Hardcore Gym & Fitness Gauntlet
-          ========================================================================= */}
-      <section className="py-16 md:py-24 bg-[#08090C] text-[#F8F9FA] border-b-2 border-[#1E2332] relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b border-[#1E2332] mb-12">
-            <div>
-              <span className="badge-tech badge-tech-volt mb-2">ARENA DISCIPLINE</span>
-              <h2 className="font-display text-4xl sm:text-5xl md:text-6xl font-black text-[#F8F9FA] tracking-tight m-0">
-                WHAT IS A HYROX-INSPIRED RACE?
-              </h2>
-            </div>
-            <p className="max-w-md text-xs sm:text-sm text-[#949CAE] font-sans leading-relaxed">
-              Unlike traditional running or static bodybuilding, HYROX combines explosive linear speed with heavy functional work capacities in an uninterrupted race against the clock.
-            </p>
-          </div>
-
-          {/* 3 Pillars Grid with Heavy Metal / Gym Framing */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            <div className="p-6 sm:p-7 bg-[#0E1016] border-2 border-[#1E2332] rounded-sm hover:border-[#D2F824] transition-all group shadow-xl">
-              <div className="w-12 h-12 rounded bg-[#161A24] border border-[#2D3448] flex items-center justify-center text-[#D2F824] mb-5 group-hover:scale-110 transition-transform">
-                <Flame className="w-6 h-6" />
-              </div>
-              <div className="font-mono text-xs text-[#7E879B] uppercase tracking-wider mb-1 font-bold">
-                PILLAR 01 // ENDURANCE
-              </div>
-              <h3 className="font-display text-2xl sm:text-3xl font-black text-[#F8F9FA] mb-2 tracking-tight">
-                LACTATE TOLERANCE
-              </h3>
-              <p className="text-xs sm:text-sm text-[#949CAE] leading-relaxed">
-                Transition seamlessly from high-output sprint bursts into heavy resistance sleds and rowing ergs without allowing heart rate to drop.
-              </p>
-            </div>
-
-            <div className="p-6 sm:p-7 bg-[#0E1016] border-2 border-[#1E2332] rounded-sm hover:border-[#60A5FA] transition-all group shadow-xl">
-              <div className="w-12 h-12 rounded bg-[#161A24] border border-[#2D3448] flex items-center justify-center text-[#60A5FA] mb-5 group-hover:scale-110 transition-transform">
-                <Users2 className="w-6 h-6" />
-              </div>
-              <div className="font-mono text-xs text-[#7E879B] uppercase tracking-wider mb-1 font-bold">
-                PILLAR 02 // CHEMISTRY
-              </div>
-              <h3 className="font-display text-2xl sm:text-3xl font-black text-[#F8F9FA] mb-2 tracking-tight">
-                DUO SYNCHRONICITY
-              </h3>
-              <p className="text-xs sm:text-sm text-[#949CAE] leading-relaxed">
-                Both athletes suffer and conquer together. Tagging in, pacing split times, verbal cues, and synchronized flips dictate podium victory.
-              </p>
-            </div>
-
-            <div className="p-6 sm:p-7 bg-[#0E1016] border-2 border-[#1E2332] rounded-sm hover:border-[#D2F824] transition-all group shadow-xl">
-              <div className="w-12 h-12 rounded bg-[#161A24] border border-[#2D3448] flex items-center justify-center text-[#D2F824] mb-5 group-hover:scale-110 transition-transform">
-                <Trophy className="w-6 h-6" />
-              </div>
-              <div className="font-mono text-xs text-[#7E879B] uppercase tracking-wider mb-1 font-bold">
-                PILLAR 03 // AUDITING
-              </div>
-              <h3 className="font-display text-2xl sm:text-3xl font-black text-[#F8F9FA] mb-2 tracking-tight">
-                STRICT MOVEMENT REPS
-              </h3>
-              <p className="text-xs sm:text-sm text-[#949CAE] leading-relaxed">
-                Zero sloppy reps permitted. Official ASPIRE marshals audit chest-to-turf burpees, full tyre overturns, and photogate breaks with zero bias.
-              </p>
             </div>
 
           </div>
@@ -315,15 +236,6 @@ export default function HomePage() {
             </div>
           </div>
 
-        </div>
-      </section>
-
-      {/* =========================================================================
-          WAVE SCHEDULE & COMBAT LOADOUT CHECKLIST
-          ========================================================================= */}
-      <section className="py-16 md:py-24 bg-[#08090C] border-b-2 border-[#1E2332]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <WaveCalculator />
         </div>
       </section>
 
