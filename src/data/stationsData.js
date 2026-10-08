@@ -9,6 +9,7 @@ export const stationsData = [
     title: "50M SPRINT",
     subtitle: "Explosive Turf Acceleration & Max Velocity",
     category: "AEROBIC / ANAEROBIC POWER",
+    image: "/stations/station-01.jpg",
     targetZone: "Sprint Track Turf Lane",
     pacingPacingTarget: "All-Out Sprint (< 8.0s)",
     male: {
@@ -54,6 +55,7 @@ export const stationsData = [
     title: "BURPEE / SKIP ZONE",
     subtitle: "Full-Body Metabolic Acid Burn",
     category: "METABOLIC CONDITIONING",
+    image: "/stations/station-02.jpg",
     targetZone: "Station Bay 02",
     pacingPacingTarget: "Continuous Cadence (< 50s)",
     male: {
@@ -99,6 +101,7 @@ export const stationsData = [
     title: "FARMER’S WALK",
     subtitle: "Loaded Heavy Dumbbell / Kettlebell Circuit",
     category: "HEAVY ISOMETRIC CARRY",
+    image: "/stations/station-03.jpg",
     targetZone: "50M Pylon Circuit Bay",
     pacingPacingTarget: "Unbroken Pacing (< 60s)",
     male: {
@@ -144,6 +147,7 @@ export const stationsData = [
     title: "CONCEPT2 / ELECTRIC ROWING ERG",
     subtitle: "High-Lactate Split Cadence & Stroke Drive",
     category: "CARDIOVASCULAR LACTATE RESISTANCE",
+    image: "/stations/station-04.jpg",
     targetZone: "Station Bay 04 // Erg Rows",
     pacingPacingTarget: "Sub-1:35 / 500m Pace",
     male: {
@@ -189,6 +193,7 @@ export const stationsData = [
     title: "SLED PUSH",
     subtitle: "Heavy Steel Sled Drive Against Turf Friction",
     category: "HORIZONTAL LEG HYPERTROPHY / DRIVE",
+    image: null,
     targetZone: "20M Turf Prowler Lane",
     pacingPacingTarget: "Relentless Drive (< 40s)",
     male: {
@@ -234,6 +239,7 @@ export const stationsData = [
     title: "SLED PULL",
     subtitle: "Heavy Marine Battle Rope Hand-Over-Hand",
     category: "POSTERIOR CHAIN & UPPER BODY PULL",
+    image: null,
     targetZone: "Pull Box Zone 06",
     pacingPacingTarget: "Rapid Recoil Pull (< 45s)",
     male: {
@@ -279,6 +285,7 @@ export const stationsData = [
     title: "TYRE FLIP",
     subtitle: "Heavy Industrial Tyre Triple-Extension Finale",
     category: "EXPLOSIVE FULL-BODY HIP HINGE",
+    image: null,
     targetZone: "Championship Finale Ring",
     pacingPacingTarget: "6 Flips (< 35s)",
     male: {

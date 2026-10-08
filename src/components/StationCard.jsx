@@ -42,6 +42,33 @@ export default function StationCard({ station, gender, onSelect }) {
           {station.subtitle}
         </p>
 
+        {/* Blended Station Visual Box */}
+        <div className="relative w-full h-44 sm:h-48 rounded overflow-hidden mb-4 border border-[#26272B] group-hover:border-[#D2F824]/40 transition-colors bg-[#0E0F12] flex items-center justify-center">
+          {station.image ? (
+            <>
+              <img
+                src={station.image}
+                alt={station.title}
+                className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.12] saturate-[0.88] group-hover:scale-105 group-hover:brightness-95 transition-all duration-500"
+              />
+              {/* Seamless Website Background Blending Gradients */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#141518] via-[#141518]/25 to-transparent opacity-90 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[#141518]/70 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#141518]/30 via-transparent to-[#141518]/30 pointer-events-none" />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/5 pointer-events-none" />
+            </>
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center bg-[#0C0D11] p-4 text-center border border-dashed border-[#20232B]">
+              <span className="font-mono text-[10px] text-[#7E879B] uppercase tracking-wider font-bold">
+                STATION {station.number} MEDIA
+              </span>
+              <span className="font-mono text-[9px] text-[#5A5E6B] mt-1 tracking-wider uppercase">
+                Awaiting Official Visual
+              </span>
+            </div>
+          )}
+        </div>
+
         {/* Dynamic Metric Grid */}
         <div className="grid grid-cols-2 gap-2.5 p-3 bg-[#0E0F12] border border-[#26272B] rounded mb-4">
           <div>
@@ -62,18 +89,6 @@ export default function StationCard({ station, gender, onSelect }) {
               {profile.target}
             </div>
           </div>
-        </div>
-
-        {/* Muscle Focus Pills */}
-        <div className="flex flex-wrap gap-1.5 mb-5">
-          {station.muscles.slice(0, 3).map((m, idx) => (
-            <span
-              key={idx}
-              className="text-[10px] font-mono px-2 py-0.5 bg-[#1C1E23] text-[#8E929B] border border-[#26272B] rounded-xs group-hover:border-[#3B82F6]/40 transition-colors"
-            >
-              {m.name}
-            </span>
-          ))}
         </div>
       </div>
 
