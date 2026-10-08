@@ -193,7 +193,7 @@ export const stationsData = [
     title: "SLED PUSH",
     subtitle: "Heavy Steel Sled Drive Against Turf Friction",
     category: "HORIZONTAL LEG HYPERTROPHY / DRIVE",
-    image: null,
+    image: "/stations/station-05.jpg",
     targetZone: "20M Turf Prowler Lane",
     pacingPacingTarget: "Relentless Drive (< 40s)",
     male: {
@@ -239,7 +239,7 @@ export const stationsData = [
     title: "SLED PULL",
     subtitle: "Heavy Marine Battle Rope Hand-Over-Hand",
     category: "POSTERIOR CHAIN & UPPER BODY PULL",
-    image: null,
+    image: "/stations/station-06.jpg",
     targetZone: "Pull Box Zone 06",
     pacingPacingTarget: "Rapid Recoil Pull (< 45s)",
     male: {
@@ -285,7 +285,7 @@ export const stationsData = [
     title: "TYRE FLIP",
     subtitle: "Heavy Industrial Tyre Triple-Extension Finale",
     category: "EXPLOSIVE FULL-BODY HIP HINGE",
-    image: null,
+    image: "/stations/station-07.jpg",
     targetZone: "Championship Finale Ring",
     pacingPacingTarget: "6 Flips (< 35s)",
     male: {

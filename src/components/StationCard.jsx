@@ -43,19 +43,34 @@ export default function StationCard({ station, gender, onSelect }) {
         </p>
 
         {/* Blended Station Visual Box */}
-        <div className="relative w-full h-44 sm:h-48 rounded overflow-hidden mb-4 border border-[#26272B] group-hover:border-[#D2F824]/40 transition-colors bg-[#0E0F12] flex items-center justify-center">
+        <div className="relative w-full h-48 sm:h-52 rounded overflow-hidden mb-4 border border-[#26272B] group-hover:border-[#D2F824]/40 transition-colors bg-[#141518] flex items-center justify-center">
           {station.image ? (
             <>
+              {/* Ambient Blurred Backdrop to extend and blend image colors seamlessly into card */}
+              <img
+                src={station.image}
+                alt=""
+                aria-hidden="true"
+                className="absolute inset-0 w-full h-full object-cover filter blur-2xl scale-125 opacity-50 brightness-75 pointer-events-none"
+              />
+
+              {/* Full Image: 100% Visible, Crisp, Uncropped */}
               <img
                 src={station.image}
                 alt={station.title}
-                className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.12] saturate-[0.88] group-hover:scale-105 group-hover:brightness-95 transition-all duration-500"
+                className="relative z-10 max-h-full max-w-full object-contain filter brightness-[0.94] contrast-[1.1] group-hover:scale-105 transition-transform duration-500"
+                style={{ imageRendering: 'high-quality' }}
               />
-              {/* Seamless Website Background Blending Gradients */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#141518] via-[#141518]/25 to-transparent opacity-90 pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-b from-[#141518]/70 via-transparent to-transparent pointer-events-none" />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#141518]/30 via-transparent to-[#141518]/30 pointer-events-none" />
-              <div className="absolute inset-0 ring-1 ring-inset ring-white/5 pointer-events-none" />
+
+              {/* Seamless Dark Background Blending: Radial Vignette + Linear Fades */}
+              <div 
+                className="absolute inset-0 z-20 pointer-events-none"
+                style={{
+                  background: 'radial-gradient(ellipse at center, transparent 40%, rgba(20, 21, 24, 0.6) 75%, #141518 100%)'
+                }}
+              />
+              <div className="absolute inset-0 z-20 pointer-events-none bg-gradient-to-t from-[#141518] via-transparent to-[#141518]/70" />
+              <div className="absolute inset-0 z-20 pointer-events-none ring-1 ring-inset ring-white/5" />
             </>
           ) : (
             <div className="w-full h-full flex flex-col items-center justify-center bg-[#0C0D11] p-4 text-center border border-dashed border-[#20232B]">
