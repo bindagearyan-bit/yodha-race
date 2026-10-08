@@ -35,22 +35,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Technical Marquee Ribbon */}
-      <div className="bg-[#050608] text-[#848CA0] text-[11px] font-mono tracking-widest uppercase border-b border-[#1A1F2C] py-1.5 px-4 overflow-hidden select-none">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#D2F824] pulse-target"></span>
-            <span className="text-[#F8F9FA] font-bold">ASPIRE AIML × RUGGEDIAN™</span>
-            <span className="text-[#363D4F] hidden sm:inline">///</span>
-            <span className="hidden sm:inline text-[#D2F824] font-black">YODHA RACE 2026 // HYROX ARENA</span>
-          </div>
-          <div className="flex items-center gap-4 text-[10px] sm:text-[11px]">
-            <span className="hidden md:inline text-[#848CA0]">VENUE: DYPCET ATHLETIC TURF, KOLHAPUR</span>
-            <span className="text-[#363D4F] hidden md:inline">|</span>
-            <span className="text-[#F8F9FA] font-bold">DATE: SAT, 17 OCT 2026</span>
-          </div>
-        </div>
-      </div>
 
       {/* Main Navigation Bar (Hardcore Dark Gym) */}
       <header
