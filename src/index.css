@@ -1,0 +1,321 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bone: #14171E;
+  --color-stone: #1A1E26;
+  --color-graphite: #08090B;
+  --color-graphite-card: #0E1015;
+  --color-graphite-elevated: #161920;
+  --color-volt: #D2F824;
+  --color-volt-hover: #E1FA4B;
+  --color-cobalt: #1D4ED8;
+  --color-cobalt-light: #2563EB;
+  --font-display: 'Barlow Condensed', 'Bebas Neue', sans-serif;
+  --font-headline: 'Bebas Neue', 'Barlow Condensed', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==========================================================================
+   YODHA RACE // HARDCORE GYM & HYROX ATHLETIC ARENA DESIGN SYSTEM
+   ASPIRE AIML × RUGGEDIAN™
+   ========================================================================== */
+
+:root {
+  --bg-dark-arena: #08090C;
+  --bg-carbon-card: #0E1015;
+  --bg-iron-elevated: #151821;
+  --bg-steel-surface: #1C202B;
+  --border-steel: #242936;
+  --border-steel-bright: #363D4F;
+  --accent-volt: #D2F824;
+  --accent-volt-glow: rgba(210, 248, 36, 0.4);
+  --accent-cobalt: #2563EB;
+  --text-white: #F8F9FA;
+  --text-dim: #949CAE;
+  --text-muted: #5E6577;
+}
+
+html {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #08090C;
+  color: #F8F9FA;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #08090C;
+  color: #F8F9FA;
+  overflow-x: clip;
+  overflow-y: visible;
+  position: relative;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Hardcore dark gym carbon weave texture */
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(210, 248, 36, 0.04) 0%, transparent 60%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 28px 28px, 28px 28px;
+}
+
+::selection {
+  background-color: #D2F824;
+  color: #08090C;
+}
+
+/* Hardcore Gym Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #08090C;
+}
+::-webkit-scrollbar-thumb {
+  background: #232733;
+  border-radius: 2px;
+  border: 1px solid #13161F;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D2F824;
+}
+
+/* Typography Helpers */
+.font-display { font-family: 'Barlow Condensed', 'Bebas Neue', sans-serif; }
+.font-headline { font-family: 'Bebas Neue', 'Barlow Condensed', sans-serif; }
+.font-mono { font-family: 'JetBrains Mono', monospace; }
+.font-body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* Industrial Gym Grid & Knurling Textures */
+.bg-gym-turf {
+  background: radial-gradient(circle at 50% 20%, #151822 0%, #08090C 80%);
+}
+
+.bg-gym-knurl {
+  background-image: 
+    linear-gradient(135deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(225deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%),
+    linear-gradient(315deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+}
+
+/* Gym LED Timer Digits */
+.gym-timer-display {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 15px rgba(210, 248, 36, 0.25);
+}
+
+/* High Voltage Neon Gym Buttons */
+.btn-pill-volt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #D2F824;
+  color: #08090C;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid #D2F824;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 20px rgba(210, 248, 36, 0.25);
+}
+
+.btn-pill-volt:hover {
+  background-color: #E2FF4A;
+  transform: translateY(-2px);
+  box-shadow: 0 0 28px rgba(210, 248, 36, 0.5);
+}
+
+.btn-pill-volt .btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #08090C;
+  color: #D2F824;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-volt:hover .btn-arrow {
+  transform: translateX(4px) rotate(-15deg);
+}
+
+.btn-pill-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: #12141C;
+  color: #F8F9FA;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.8rem 1.6rem;
+  border-radius: 9999px;
+  border: 1px solid #282E3E;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-pill-dark:hover {
+  background-color: #191D28;
+  border-color: #D2F824;
+  color: #D2F824;
+  transform: translateY(-2px);
+  box-shadow: 0 0 16px rgba(210, 248, 36, 0.15);
+}
+
+/* Gym Station Cards */
+.station-card {
+  background: #0E1015;
+  border: 1px solid #202532;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.station-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(210, 248, 36, 0.3), transparent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.station-card:hover {
+  transform: translateY(-5px);
+  border-color: #D2F824;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(210, 248, 36, 0.12);
+}
+
+.station-card:hover::before {
+  opacity: 1;
+}
+
+/* Badges */
+.badge-tech {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 3px;
+  line-height: 1;
+}
+
+.badge-tech-volt {
+  background-color: #D2F824;
+  color: #08090C;
+  font-weight: 800;
+}
+
+.badge-tech-dark {
+  background-color: #141722;
+  color: #E2E6F0;
+  border: 1px solid #282E3E;
+}
+
+.badge-tech-cobalt {
+  background-color: rgba(37, 99, 235, 0.15);
+  color: #60A5FA;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Steel Switch Capsule */
+.switch-capsule {
+  display: inline-flex;
+  padding: 4px;
+  background-color: #0A0C10;
+  border: 1px solid #232836;
+  border-radius: 9999px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.switch-capsule button {
+  padding: 0.55rem 1.35rem;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: none;
+}
+
+.switch-capsule button.active {
+  background-color: #D2F824;
+  color: #08090C;
+  box-shadow: 0 0 14px rgba(210, 248, 36, 0.45);
+}
+
+.switch-capsule button.inactive {
+  background-color: transparent;
+  color: #798296;
+}
+
+.switch-capsule button.inactive:hover {
+  color: #F8F9FA;
+}
+
+/* Scanning Beam */
+@keyframes scan-line {
+  0% { top: 0%; opacity: 0.9; }
+  50% { top: 100%; opacity: 1; }
+  100% { top: 0%; opacity: 0.9; }
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #D2F824;
+  box-shadow: 0 0 12px #D2F824;
+  animation: scan-line 2.2s ease-in-out infinite;
+}
+
+/* Radar pulse animation */
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(210, 248, 36, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(210, 248, 36, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(210, 248, 36, 0);
+  }
+}
+
+.pulse-target {
+  animation: radar-pulse 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
