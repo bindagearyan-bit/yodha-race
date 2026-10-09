@@ -4,10 +4,10 @@ import { playTick, playSuccessChime } from '../services/sound';
 
 export default function UpiModal({ isOpen, onClose }) {
   const [copied, setCopied] = useState(false);
-  const upiId = "aspire.aiml@oksbi";
-  const payeeName = "ASPIRE AIML DYPCET";
+  const upiId = "7058745254-2@ybl";
+  const payeeName = "Aspire Association";
   const amount = "100";
-  const upiDeepLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR&tn=${encodeURIComponent('Yodha Race Duo Registration')}`;
+  const upiDeepLink = `upi://pay?pa=7058745254-2@ybl&pn=Aspire%20Association&am=100&cu=INR&tn=${encodeURIComponent('Yodha Race Duo Registration')}`;
 
   if (!isOpen) return null;
 
@@ -61,71 +61,16 @@ export default function UpiModal({ isOpen, onClose }) {
           
           {/* QR Code Container with High-Tech Scan Frame */}
           <div className="flex flex-col items-center justify-center">
-            <div className="relative p-5 bg-[#FFFFFF] border-4 border-[#D2F824] rounded-lg shadow-xl relative overflow-hidden group">
+            <div className="relative p-3 bg-[#FFFFFF] border-4 border-[#D2F824] rounded-lg shadow-xl overflow-hidden group">
               {/* Scan beam line */}
               <div className="scan-line"></div>
 
-              {/* Dynamic Crisp SVG QR Graphic for UPI */}
-              <svg
-                viewBox="0 0 200 200"
-                className="w-48 h-48 sm:w-52 sm:h-52"
-              >
-                {/* QR Finder patterns */}
-                <rect width="200" height="200" fill="#FFFFFF" />
-                {/* Top-Left Finder */}
-                <rect x="15" y="15" width="50" height="50" fill="#0E0F12" />
-                <rect x="22" y="22" width="36" height="36" fill="#FFFFFF" />
-                <rect x="29" y="29" width="22" height="22" fill="#0E0F12" />
-                {/* Top-Right Finder */}
-                <rect x="135" y="15" width="50" height="50" fill="#0E0F12" />
-                <rect x="142" y="22" width="36" height="36" fill="#FFFFFF" />
-                <rect x="149" y="29" width="22" height="22" fill="#0E0F12" />
-                {/* Bottom-Left Finder */}
-                <rect x="15" y="135" width="50" height="50" fill="#0E0F12" />
-                <rect x="22" y="142" width="36" height="36" fill="#FFFFFF" />
-                <rect x="29" y="149" width="22" height="22" fill="#0E0F12" />
-                
-                {/* QR Data Matrix grid lines and mock blocks */}
-                <g fill="#0E0F12">
-                  <rect x="75" y="15" width="10" height="10" />
-                  <rect x="95" y="15" width="10" height="10" />
-                  <rect x="115" y="15" width="10" height="10" />
-                  <rect x="75" y="35" width="10" height="20" />
-                  <rect x="95" y="45" width="20" height="10" />
-                  <rect x="15" y="75" width="10" height="10" />
-                  <rect x="35" y="75" width="20" height="10" />
-                  <rect x="75" y="75" width="10" height="10" />
-                  <rect x="95" y="75" width="10" height="10" />
-                  <rect x="115" y="75" width="10" height="10" />
-                  <rect x="135" y="75" width="20" height="10" />
-                  <rect x="165" y="75" width="10" height="10" />
-                  <rect x="15" y="95" width="10" height="10" />
-                  <rect x="45" y="95" width="10" height="20" />
-                  <rect x="65" y="95" width="20" height="10" />
-                  <rect x="105" y="95" width="10" height="10" />
-                  <rect x="125" y="95" width="20" height="10" />
-                  <rect x="155" y="95" width="20" height="20" />
-                  <rect x="15" y="115" width="20" height="10" />
-                  <rect x="75" y="115" width="20" height="10" />
-                  <rect x="105" y="115" width="20" height="10" />
-                  <rect x="135" y="115" width="10" height="10" />
-                  <rect x="75" y="135" width="20" height="10" />
-                  <rect x="115" y="135" width="20" height="10" />
-                  <rect x="155" y="135" width="10" height="20" />
-                  <rect x="175" y="135" width="10" height="10" />
-                  <rect x="75" y="155" width="10" height="20" />
-                  <rect x="95" y="155" width="20" height="10" />
-                  <rect x="125" y="155" width="20" height="10" />
-                  <rect x="75" y="175" width="30" height="10" />
-                  <rect x="115" y="175" width="10" height="10" />
-                  <rect x="145" y="165" width="20" height="20" />
-                </g>
-
-                {/* Central Logo Stamp */}
-                <rect x="80" y="80" width="40" height="40" rx="4" fill="#0E0F12" />
-                <rect x="83" y="83" width="34" height="34" rx="2" fill="#D2F824" />
-                <text x="100" y="105" fill="#0E0F12" fontFamily="sans-serif" fontSize="16" fontWeight="bold" textAnchor="middle">₹100</text>
-              </svg>
+              {/* Real Uploaded UPI QR Code */}
+              <img
+                src="/upi-qr.png"
+                alt="Aspire Association UPI QR Code"
+                className="w-52 h-52 sm:w-60 sm:h-60 object-contain rounded"
+              />
             </div>
 
             <span className="font-mono text-xs text-[#D2F824] font-bold mt-3 uppercase tracking-wider">
@@ -189,7 +134,7 @@ export default function UpiModal({ isOpen, onClose }) {
 
           {/* Direct Google Form Button */}
           <a
-            href="https://forms.gle/yodha-race-aspire-2026"
+            href="https://forms.gle/qFxo44YXxbrkfYH1A"
             target="_blank"
             rel="noopener noreferrer"
             onClick={playTick}

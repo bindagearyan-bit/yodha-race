@@ -12,7 +12,7 @@ export default function RegisterPage() {
   const [showUpiModal, setShowUpiModal] = useState(false);
   const [copiedUpi, setCopiedUpi] = useState(false);
 
-  const upiId = "aspire.aiml@oksbi";
+  const upiId = "7058745254-2@ybl";
 
   const handleCopyUpi = () => {
     playSuccessChime();
@@ -229,7 +229,7 @@ export default function RegisterPage() {
                   </button>
 
                   <a
-                    href="https://forms.gle/yodha-race-aspire-2026"
+                    href="https://forms.gle/qFxo44YXxbrkfYH1A"
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={playTick}
