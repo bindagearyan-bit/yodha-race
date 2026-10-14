@@ -12,7 +12,7 @@ export default function RegisterPage() {
   const [showUpiModal, setShowUpiModal] = useState(false);
   const [copiedUpi, setCopiedUpi] = useState(false);
 
-  const upiId = "7058745254-2@ybl";
+  const upiId = "7058745254@axl";
 
   const handleCopyUpi = () => {
     playSuccessChime();

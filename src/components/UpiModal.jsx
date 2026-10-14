@@ -4,10 +4,10 @@ import { playTick, playSuccessChime } from '../services/sound';
 
 export default function UpiModal({ isOpen, onClose }) {
   const [copied, setCopied] = useState(false);
-  const upiId = "7058745254-2@ybl";
-  const payeeName = "Aspire Association";
+  const upiId = "7058745254@axl";
+  const payeeName = "Tejas Khot";
   const amount = "100";
-  const upiDeepLink = `upi://pay?pa=7058745254-2@ybl&pn=Aspire%20Association&am=100&cu=INR&tn=${encodeURIComponent('Yodha Race Duo Registration')}`;
+  const upiDeepLink = `upi://pay?pa=7058745254@axl&pn=Tejas%20Khot&am=100&cu=INR&tn=${encodeURIComponent('Yodha Race Duo Registration')}`;
 
   if (!isOpen) return null;
 
