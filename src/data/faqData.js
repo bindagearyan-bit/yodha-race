@@ -15,7 +15,7 @@ export const faqData = [
   },
   {
     q: "How does the payment and verification process work?",
-    a: "Scan the official ASPIRE UPI QR code (or use UPI ID `aspire.aiml@oksbi`), pay ₹100, take a screenshot showing the UTR / Transaction Reference ID, and paste it or upload it in the official Google Form reservation portal."
+    a: "Scan the official UPI QR code (or use UPI ID `7058745254@axl`), pay ₹100, take a screenshot showing the UTR / Transaction Reference ID, and paste it or upload it in the official Google Form reservation portal."
   },
   {
     q: "What if one teammate gets injured mid-race?",

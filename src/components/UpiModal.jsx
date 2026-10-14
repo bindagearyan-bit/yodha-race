@@ -41,7 +41,7 @@ export default function UpiModal({ isOpen, onClose }) {
                 UPI PAYMENT GATEWAY // ₹100
               </h3>
               <span className="font-mono text-[10px] text-[#8E929B] tracking-wider uppercase">
-                ASPIRE AIML OFFICIAL ACCOUNT
+                TEJAS KHOT // ASPIRE OFFICIAL ACCOUNT
               </span>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function UpiModal({ isOpen, onClose }) {
               {/* Real Uploaded UPI QR Code */}
               <img
                 src="/upi-qr.png"
-                alt="Aspire Association UPI QR Code"
+                alt="Tejas Khot UPI QR Code"
                 className="w-52 h-52 sm:w-60 sm:h-60 object-contain rounded"
               />
             </div>
