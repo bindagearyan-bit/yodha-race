@@ -28,22 +28,56 @@ export default function HomePage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
-          {/* Top Tagline & Badges */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-            <div className="flex items-center gap-2">
-              <span className="badge-tech badge-tech-volt">DYPCET ATHLETIC TURF</span>
-              <span className="text-[#363D4F] font-mono text-xs">///</span>
-              <span className="font-mono text-xs font-bold text-[#E2E6F0] tracking-wider uppercase">
-                DEPT. OF AIML • ASPIRE
-              </span>
+          {/* Top Header: Dept of AIML Seal (Left) + Ruggedian Sponsor Brand (Right) */}
+          <div className="flex flex-wrap items-center justify-between gap-6 mb-6">
+            
+            {/* Left Side: Department of AIML • ASPIRE Official Seal */}
+            <div className="flex items-center gap-3.5 group">
+              <div className="w-13 h-13 sm:w-16 sm:h-16 rounded-full bg-white/5 p-1 border-2 border-[#2D3448] group-hover:border-[#3B82F6] transition-all duration-300 shadow-[0_0_20px_rgba(59,130,246,0.3)] flex items-center justify-center shrink-0">
+                <img
+                  src="/dept-aiml-seal.png"
+                  alt="Department of AIML • ASPIRE Student Association Seal"
+                  className="w-full h-full object-contain filter drop-shadow group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <div className="flex flex-col justify-center">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono text-xs sm:text-sm md:text-base font-black text-[#F8F9FA] tracking-wider uppercase group-hover:text-[#D2F824] transition-colors">
+                    DEPT. OF AIML • ASPIRE
+                  </span>
+                  <span className="badge-tech badge-tech-volt !py-0.5 !px-2 text-[10px]">
+                    DYPCET
+                  </span>
+                </div>
+                <span className="font-mono text-[10px] sm:text-[11px] text-[#8A93A6] tracking-widest uppercase font-semibold mt-0.5">
+                  STUDENT ASSOCIATION /// OFFICIAL TURF HOST
+                </span>
+              </div>
             </div>
 
-            <div className="flex items-center gap-2 font-mono text-xs text-[#949CAE]">
-              <span className="text-[#D0D5E0] font-semibold">POWERED PARTNERSHIP:</span>
-              <span className="px-2.5 py-0.5 bg-[#161A24] border border-[#2D3448] text-[#D2F824] font-black tracking-widest text-[11px] rounded shadow-[0_0_10px_rgba(210,248,36,0.15)]">
-                RUGGEDIAN™
-              </span>
+            {/* Right Side: RUGGEDIAN Sponsor Logo (Seamlessly Blended into Dark Website) */}
+            <div className="flex items-center gap-3.5 group ml-auto sm:ml-0">
+              <div className="flex flex-col text-right hidden sm:flex">
+                <span className="font-mono text-[10px] text-[#8A93A6] font-bold tracking-widest uppercase">
+                  POWERED PARTNERSHIP
+                </span>
+                <span className="font-mono text-xs sm:text-sm font-black text-[#FEBE20] tracking-wider flex items-center justify-end gap-1.5">
+                  <span>RUGGEDIAN™</span>
+                  <span className="inline-block w-2 h-2 rounded-full bg-[#FEBE20] shadow-[0_0_8px_#FEBE20] animate-pulse"></span>
+                </span>
+              </div>
+
+              {/* Seamless Blended Warrior Graphic with Yellow Aura */}
+              <div className="relative flex items-center justify-center">
+                <img
+                  src="/ruggedian-clean-blend.png"
+                  alt="RUGGEDIAN Official Partner"
+                  className="h-16 sm:h-20 md:h-24 w-auto object-contain filter drop-shadow-[0_0_20px_rgba(254,190,32,0.4)] group-hover:scale-105 transition-all duration-300"
+                />
+              </div>
             </div>
+
           </div>
 
           {/* Massive Heavyweight Display Title */}

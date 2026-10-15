@@ -29,10 +29,16 @@ export default function Footer() {
                 The premier collegiate physical fitness gauntlet inspired by HYROX competitive dynamics. 
                 Engineered to test cardiovascular capacity, raw strength endurance, and unbreakable duo synergy.
               </p>
-              <div className="flex items-center gap-4 text-xs font-mono text-[#D2F824]">
-                <span>AIML ASPIRE</span>
+              <div className="flex items-center gap-4 text-xs font-mono text-[#D2F824] pt-2">
+                <div className="flex items-center gap-2">
+                  <img src="/dept-aiml-seal.png" alt="Dept AIML" className="w-6 h-6 rounded-full object-contain bg-white/10 p-0.5 border border-[#3B82F6]/40" />
+                  <span>AIML ASPIRE</span>
+                </div>
                 <span className="text-[#5A5D64]">×</span>
-                <span className="text-[#F5F4F0] font-bold">RUGGEDIAN™</span>
+                <div className="flex items-center gap-2">
+                  <img src="/ruggedian-clean-blend.png" alt="RUGGEDIAN" className="h-6 w-auto object-contain filter drop-shadow-[0_0_8px_rgba(254,190,32,0.4)]" />
+                  <span className="text-[#F5F4F0] font-bold">RUGGEDIAN™</span>
+                </div>
                 <span className="text-[#5A5D64]">×</span>
                 <span>DYPCET</span>
               </div>
@@ -49,11 +55,14 @@ export default function Footer() {
               <span className="w-1.5 h-1.5 bg-[#D2F824]"></span>
               COLLEGIATE HOST
             </div>
-            <p className="text-xs text-[#8E929B] leading-relaxed mb-3">
-              <strong className="text-[#F5F4F0]">ASPIRE Student Association</strong><br />
-              Department of Artificial Intelligence & Machine Learning (AIML)<br />
-              D.Y. Patil College of Engineering & Technology, Kasaba Bawada, Kolhapur 416006.
-            </p>
+            <div className="flex items-start gap-3 mb-3">
+              <img src="/dept-aiml-seal.png" alt="AIML Seal" className="w-10 h-10 rounded-full object-contain bg-white/10 p-1 border border-[#3B82F6]/40 shrink-0 mt-0.5" />
+              <p className="text-xs text-[#8E929B] leading-relaxed">
+                <strong className="text-[#F5F4F0]">ASPIRE Student Association</strong><br />
+                Department of Artificial Intelligence & Machine Learning (AIML)<br />
+                D.Y. Patil College of Engineering & Technology, Kasaba Bawada, Kolhapur 416006.
+              </p>
+            </div>
             <div className="text-[11px] font-mono text-[#5A5D64] flex items-center gap-1.5 mt-2">
               <MapPin className="w-3.5 h-3.5 text-[#D2F824]" />
               <span>16.7050° N, 74.2433° E</span>
